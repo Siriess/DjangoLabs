@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+{% csrf_token %}
+<link href="{% static 'css/feedback.css' %}" rel="stylesheet">
+    <form method="post" action="{% url 'feedback' %}">
+        {% csrf_token %}
+        <p>Имя</p>
+        <input placeholder="Ваше имя" name="name" required >
+        <p>Email</p>
+        <input placeholder="Ваш email" type="email" name="email" required >
+        <p>Отзыв</p>
+        <textarea placeholder="Ваш отзыв" name="text" required ></textarea>
+        <button type="submit" >Отправить</button>
+    </form>
+    {% for feedback in feedbacks %}
+        <div class="feedbacks">
+            <h2>От: {{ feedback.name }}</h2>
+            <p>Отзыв: {{ feedback.text }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}

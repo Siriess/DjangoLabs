@@ -1,0 +1,15 @@
+header a{
+    text-decoration: none;
+    color: black;
+    font-family: cursive;
+    font-size: 23px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    background: slategray;
+
+}

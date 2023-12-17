@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+  <header>
+    <a href="/BearBlog/">Главная</a>
+    <a href="aboutme">Обо мне</a>
+    <a href="feedback">Обратная связь</a>
+  </header>
+    <p>Я не дизайнер</p>
+    <main>
+            {% block content %}
+            {% endblock %}
+    </main>
+
+</body>
+</html>
